@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mediawiki
+  namespace: mediawiki
+spec:
+  releaseName: mediawiki
+  chart:
+    spec:
+      chart: mediawiki
+      sourceRef:
+        kind: HelmRepository
+        name: mediawiki
+  interval: 50m
+  install:
+    remediation:
+      retries: 3
