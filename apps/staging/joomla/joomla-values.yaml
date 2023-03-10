@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: joomla
+  namespace: joomla
+spec:
+  chart:
+    spec:
+      version: ">=13.3.0"
+  test:
+    enable: false
